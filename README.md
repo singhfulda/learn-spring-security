@@ -39,3 +39,11 @@ Security Configuration to set formLogin instead of basicAuth and set login and l
 
 Add error.html which is default template name for all errors with code 404, 403, 400
 
+*   commit6: LDAP Authentication 
+
+Add spring-security-ldap for LDAP and unboundid-ldapsdk for embedded LDAP server.
+
+Provide application properties and dummy data for embedded ldap
+
+with help of AuthenticationBuilder configure LdapAuthentication
+
