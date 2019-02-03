@@ -8,3 +8,34 @@
 **  Implement UserDetails and UserDetailsService from Spring Security
 **  Configure AuthenticationProvider with implemented Service.
 **  Configure AuthenticationManagerBuilder with AuthenticationProvider
+*   commit5: formLogin Authentication
+BCrypt Passwords : BCrypt Library is spring in built for hashing passwords. They are safe so. Just add to the AuthenticationProvider that you want to use BCryptPasswordEncoder.
+Adding Authorization in Spring:
+
+Create Authority Entity and Repository
+
+Add Authority List to UserDetailsService and Principal
+
+update UserDetails Overridden method in Principal to give back these Authorities
+
+Add all Controller Methods with @PreAuthorize(hasRole()) as per requirement. Its provides Method Level Class security.
+
+In Configuration add @EnableGlobalMethodSecurity(prePostEnabled = true) in order to let step 5 work.
+
+Create AuthorityMapper
+
+Add this to AuthenticationProvider
+
+
+Form based Authentication in Spring:
+
+Add Thymeleaf-extras-springsecurity4 dependency.
+
+Implement Navigation. use sec:authorize ="isAnonymous()" (elements shows when not logged in) or "isAuthenticated()" (elements shows when logged in)for Login/Logout links
+
+Implement Login/Logout Methods in Controller returning respective page
+
+Security Configuration to set formLogin instead of basicAuth and set login and logout behaviours
+
+Add error.html which is default template name for all errors with code 404, 403, 400
+
